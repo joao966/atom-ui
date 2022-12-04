@@ -1,0 +1,63 @@
+{
+  "name": "atom-ui",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "author": "João Guilherme <joaooliveira966@gmail.com>",
+  "license": "",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rimraf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --no-copy-ignored --ignore __tests__,spec.js,test.js,__snapshots__",
+    "export": "NODE_PATH=src react-scripts build"
+  },
+  "dependencies": {
+    "antd": "^4.15.0",
+    "axios": "^0.27.2",
+    "react-card-flip": "^1.1.1",
+    "react-cropper": "^2.1.8",
+    "react-draggable": "^4.4.5",
+    "react-input-mask": "^2.0.4",
+    "react-lottie": "^1.2.3",
+    "styled-components": "^5.2.3",
+    "webfontloader": "^1.6.28"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0",
+    "rimraf": "^3.0.2",
+    "tinymce": "^6.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/preset-react": "^7.13.13",
+    "install-peers": "^1.0.3",
+    "react-scripts": "^4.0.3"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

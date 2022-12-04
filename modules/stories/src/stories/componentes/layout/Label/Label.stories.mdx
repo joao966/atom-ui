@@ -1,0 +1,70 @@
+import {
+  Meta,
+  ArgsTable,
+  Description,
+  Story,
+  Props,
+  Preview,
+  Canvas,
+  Source,
+  DocsContainer,
+} from "@storybook/addon-docs/blocks";
+import { Label, PrevPlatformProvider } from "atom-ui";
+
+<Meta
+  title="Componentes/Layout/Label/Visão Geral"
+  component={Label}
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <PrevPlatformProvider>{children}</PrevPlatformProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Label
+
+Para utilizar o componente de Label basta realizar o import como abaixo:
+
+```js
+...
+import { Label } from "atom-ui";
+
+...
+render() {
+  return (
+    <Label>
+      Label Exemplo
+    <Label/>
+)}
+...
+```
+
+## Exemplos
+
+### Label Grande
+
+O Label pode ser utilizado no tamanho grande em negrito adicionando a propriedade `size="lg"`
+
+<Canvas>
+  <Label size="lg">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus
+    ligula sapien, et rutrum dui ultricies sit amet. Donec magna nibh, dignissim
+    vel mi nec, imperdiet posuere felis.
+  </Label>
+</Canvas>
+
+### Label Pequena
+
+O Label pode ser utilizado no tamanho pequeno adicionando a propriedade `size="sm"`
+
+<Canvas>
+  <Label size="sm">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus
+    ligula sapien, et rutrum dui ultricies sit amet. Donec magna nibh, dignissim
+    vel mi nec, imperdiet posuere felis.
+  </Label>
+</Canvas>

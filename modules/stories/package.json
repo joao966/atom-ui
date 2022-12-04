@@ -1,0 +1,89 @@
+{
+  "name": "atom-ui-stories",
+  "version": "0.1.0",
+  "description": "Storybook stories para o ATOM UI",
+  "author": "João Guilherme <joaooliveira966@gmail.com>",
+  "license": "",
+  "scripts": {
+    "test": "jest",
+    "build": "babel --copy-files --out-dir ./dist ./src",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build:test": "yarn prebuild:storybook && build-storybook -c .storybook"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "ts-jest": "^27.0.3"
+  },
+  "peerDependencies": {
+    "atom-ui": "^0.1.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-jest": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/node-logger": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.9",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "antd": "^4.15.2",
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0",
+    "tinymce": "^6.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/preset-react": "^7.13.13",
+    "babel-plugin-import": "^1.13.3",
+    "babel-plugin-styled-components": "^1.12.0",
+    "babel-preset-jest": "^27.0.1",
+    "falafel": "^2.2.4",
+    "webpack-merge": "^5.7.3"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)?$": "ts-jest",
+      "^.+\\.(js|jsx)$": "babel-jest"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

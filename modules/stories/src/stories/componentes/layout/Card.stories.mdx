@@ -1,0 +1,70 @@
+import {
+  Meta,
+  ArgsTable,
+  Description,
+  Story,
+  Props,
+  Preview,
+  Canvas,
+  Source,
+  DocsContainer,
+} from "@storybook/addon-docs/blocks";
+import { Form } from "antd";
+import { Card, PrevPlatformProvider } from "atom-ui";
+
+<Meta
+  title="Componentes/Layout/Card"
+  component={Card}
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <PrevPlatformProvider>{children}</PrevPlatformProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Card
+
+Para utilizar o componente basta realizar o import como abaixo:
+
+```js
+...
+import { Card } from "@prev/ui-kit";
+
+...
+render() {
+  return <Card>
+    .....
+    <Card.Divider/>
+    outro conteudo
+    <Card.Divider/>
+    ...
+  </Card>
+}
+...
+```
+
+## Exemplos
+
+<Canvas>
+  <Card>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus
+    ligula sapien, et rutrum dui ultricies sit amet. Donec magna nibh, dignissim
+    vel mi nec, imperdiet posuere felis. Maecenas eget sem diam. Mauris orci
+    dui, vulputate id mattis sit amet, dapibus in massa. Lorem ips
+  </Card>
+</Canvas>
+
+<Canvas>
+  <Card style={{ width: 250 }}>
+    <h1>Lorem ipsum dolor sit amet</h1> 
+    <Card.Divider/>
+    Fusce finibus
+    ligula sapien, et rutrum dui ultricies sit amet. Donec magna nibh, dignissim
+    vel mi nec, imperdiet posuere felis. Maecenas eget sem diam. Mauris orci
+    dui, vulputate id mattis sit amet, dapibus in massa. Lorem ips
+  </Card>
+</Canvas>

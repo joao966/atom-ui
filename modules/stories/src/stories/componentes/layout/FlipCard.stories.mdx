@@ -1,0 +1,70 @@
+import { useState } from "react";
+import {
+  Meta,
+  ArgsTable,
+  Description,
+  Story,
+  Props,
+  Preview,
+  Canvas,
+  Source,
+  DocsContainer,
+} from "@storybook/addon-docs/blocks";
+import { Form } from "antd";
+import { FlipCard, PrevPlatformProvider } from "atom-ui";
+
+<Meta
+  title="Componentes/Layout/FlipCard"
+  component={FlipCard}
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <PrevPlatformProvider>{children}</PrevPlatformProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# FlipCard
+
+Para utilizar o componente basta realizar o import como abaixo:
+
+```js
+...
+import { FlipCard } from "@prev/ui-kit";
+
+...
+render() {
+  const [flipped, setFlipped] = useState(false)
+
+  return <FlipCard  isFlipped={flipped} onClick={() => setFlipped(!flipped)}/>
+}
+...
+```
+
+## Exemplos
+
+Abaixo está uma visão geral do componente `isFlipped` representa um boolean `true` ou `false`
+
+<Canvas>
+  <FlipCard isFlipped={false} />
+</Canvas>
+
+<Canvas>
+  <FlipCard isFlipped={true} />
+</Canvas>
+
+<Canvas>
+  <Story name="with onClick">
+    {() => {
+      const [flipped, setFlipped] = useState(false);
+      return (
+        <div onClick={() => setFlipped(!flipped)}>
+          <FlipCard isFlipped={flipped} />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>

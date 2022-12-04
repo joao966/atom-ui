@@ -1,0 +1,103 @@
+import {
+  Meta,
+  Canvas,
+  ColorPalette,
+  ColorItem,
+  Preview,
+  Story,
+} from "@storybook/addon-docs/blocks";
+import theme from "atom-ui/dist/theme.js";
+
+<Meta title="Identidade visual/Cores" />
+
+## Como usar
+
+Os tokens são disponibilizados pelo `AtomPlatformProvider` em conjunto com o `ThemeProvider` do Styled-Components. Abaixo segue a estrutura de dados dos tokens de cor:
+
+```js
+const theme = {
+  color: {
+    neutral: {
+      1000: "#242525",
+      600: "#949595",
+      500: "#BDBDBD",
+      400: "#E0E0E0",
+      300: "#EEEEEE",
+      200: "#FAFAFA",
+      100: "#FFFFFF",
+    },
+    brand: {
+      primary: "#F26526",
+      secondary: "#3575AB",
+    },
+    bright: {
+      orange: "#FF8853",
+      blue: "#1B77C5",
+    },
+    light: {
+      grayish: {
+        orange: "#FEF0E9",
+        blue: "#EDF6FD",
+      },
+    },
+    functional: {
+      warning: "#FAAD14",
+      error: "#FF4D4D",
+      success: "#00A881",
+    },
+    white: "#FFFFFF",
+  },
+};
+```
+
+# Tokens de cor
+
+<ColorPalette>
+  {Object.keys(theme).map((key) =>
+    Object.keys(theme[key]).map((token, j) =>
+      typeof theme[key][token] === "object" ? (
+        Object.keys(theme[key][token]).map((colorKey) =>
+          typeof theme[key][token][colorKey] !== "object" ? (
+            <ColorItem
+              key={`${colorKey}-${j}`}
+              title={token}
+              subtitle={colorKey}
+              colors={[theme[key][token][colorKey]]}
+            />
+          ) : (
+            Object.keys(theme[key][token][colorKey]).map((lastDeep, j) => (
+              <ColorItem
+                key={`${colorKey}-${j}`}
+                title={`${token}`}
+                subtitle={`${colorKey}.${lastDeep}`}
+                colors={[theme[key][token][colorKey][lastDeep]]}
+              />
+            ))
+          )
+        )
+      ) : (
+        <ColorItem
+          key={`${token}-${j}`}
+          title={token}
+          colors={[theme[key][token]]}
+        />
+      )
+    )
+  )}
+</ColorPalette>
+
+### Exemplo de uso
+
+```js
+import React from "react";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  color: ${(props) => props.theme.color.white};
+  background: ${(props) => props.theme.color.brand.primary};
+`;
+
+export default function Component({ ...props }) {
+  return <StyledDiv {...props}>{props.children}</StyledDiv>;
+}
+```

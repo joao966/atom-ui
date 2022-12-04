@@ -1,0 +1,70 @@
+import {
+  Meta,
+  ArgsTable,
+  Description,
+  Story,
+  Props,
+  Preview,
+  Canvas,
+  Source,
+  DocsContainer,
+} from "@storybook/addon-docs/blocks";
+import { Text, AtomPlatformProvider } from "atom-ui";
+
+<Meta
+  title="Componentes/Text/Visão Geral"
+  component={Text}
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <AtomPlatformProvider>{children}</AtomPlatformProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Text
+
+Para utilizar o componente de Texto basta realizar o import como abaixo:
+
+```js
+...
+import { Text } from "atom-ui";
+
+...
+render() {
+  return (
+    <Text>
+      Texto Exemplo
+    <Text/>
+)}
+...
+```
+
+## Exemplos
+
+### Texto Grande em Negrito
+
+O Texto pode ser utilizado no tamanho grande em negrito adicionando as propriedades `size="lg"` e `emphasys`
+
+<Canvas>
+  <Text emphasys size="lg">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus
+    ligula sapien, et rutrum dui ultricies sit amet. Donec magna nibh, dignissim
+    vel mi nec, imperdiet posuere felis.
+  </Text>
+</Canvas>
+
+### Texto Pequeno sem o Efeito Negrito
+
+O Texto pode ser utilizado no tamanho pequeno sem o efeito negrito adicionando as propriedades `size="sm"` e `emphasys={false}`
+
+<Canvas>
+  <Text emphasys={false} size="sm">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus
+    ligula sapien, et rutrum dui ultricies sit amet. Donec magna nibh, dignissim
+    vel mi nec, imperdiet posuere felis.
+  </Text>
+</Canvas>

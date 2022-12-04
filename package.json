@@ -1,0 +1,62 @@
+{
+  "name": "atom-ui-root",
+  "version": "0.1.0",
+  "private": true,
+  "author": "João Guilherme <joaooliveira966@gmail.com>",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "storybook": "yarn build && yarn workspace atom-ui-stories run storybook",
+    "atom": "yarn workspace atom-ui start",
+    "lint": "eslint modules/*/src/**/*.{js,jsx}",
+    "lint:fix": "eslint modules/*/src/**/*.{js,jsx} --fix"
+  },
+  "workspaces": [
+    "modules/*"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@babel/preset-react": "^7.13.13",
+    "@storybook/addon-a11y": "^6.3.7",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-jest": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/node-logger": "^6.3.7",
+    "@storybook/preset-ant-design": "0.0.2",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.7",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^12.0.0",
+    "antd": "^4.15.2",
+    "antd-mask-input": "^0.1.15",
+    "babel-plugin-styled-components": "^1.12.0",
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0",
+    "rimraf": "^3.0.2",
+    "tinymce": "^6.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+    "install-peers": "^1.0.3",
+    "lerna": "^4.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

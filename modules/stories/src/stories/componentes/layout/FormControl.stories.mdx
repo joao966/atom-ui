@@ -1,0 +1,86 @@
+import {
+  Meta,
+  ArgsTable,
+  Description,
+  Story,
+  Props,
+  Preview,
+  Canvas,
+  Source,
+  DocsContainer,
+} from "@storybook/addon-docs/blocks";
+
+import {
+  Button,
+  PrevPlatformProvider,
+  FieldInput,
+  FormControl,
+} from "atom-ui";
+import { Row, Col, Form } from "antd";
+
+<Meta
+  title="Componentes/Layout/FormControl"
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <PrevPlatformProvider>{children}</PrevPlatformProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+  component={FormControl}
+/>
+
+<Canvas>
+  <FormControl>
+    <Form.Item
+      name="name"
+      rules={[
+        {
+          required: true,
+          message: "Campo nome é obrigatório",
+        },
+      ]}
+    >
+      <FieldInput
+        label={"Nome completo"}
+        placeholder={"Digite seu nome"}
+        aria-label="aria-label"
+        id="name"
+      />
+    </Form.Item>
+    <Form.Item
+      name="name"
+      rules={[
+        {
+          required: true,
+          message: "Campo nome é obrigatório",
+        },
+      ]}
+    >
+      <FieldInput
+        label={"Nome completo"}
+        placeholder={"Digite seu nome"}
+        aria-label="aria-label"
+        id="name"
+      />
+    </Form.Item>
+    <Form.Item
+      name="name"
+      rules={[
+        {
+          required: true,
+          message: "Campo nome é obrigatório",
+        },
+      ]}
+    >
+      <FieldInput
+        label={"Nome completo"}
+        placeholder={"Digite seu nome"}
+        aria-label="aria-label"
+        id="name"
+      />
+    </Form.Item>
+  </FormControl>
+</Canvas>

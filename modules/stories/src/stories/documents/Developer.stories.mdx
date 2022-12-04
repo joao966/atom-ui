@@ -1,0 +1,90 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Como usar/Desenvolvedor" />
+
+# Guia de primeiros passos para desenvolvedores
+
+O Design System contém uma coleção de componentes React que podem ser usados ​​para criar aplicativos React acessíveis e eficientes. Este guia de introdução fornece as instruções básicas para instalar os componentes do Design System como uma dependência em seu aplicativo e começar a usar esses componentes. A documentação de cada componente individual fornece informações mais detalhadas, incluindo:
+
+- Uma visão geral com orientação de uso contextual e práticas recomendadas
+- Exemplos de variações comuns do componente, como tamanhos e estados
+- Orientação para usar os componentes com acessibilidade em mente
+- Uma descrição detalhada dos adereços React disponíveis, juntamente com um ambiente de playground interativo
+
+## Usando este projeto
+
+O Design System é normalmente instalado em um projeto gerenciado por `npm` ou` yarn` como um pacote JavaScript do Package Registry.
+
+Agora adicione este projeto como uma dependência do seu projeto com:
+
+```js
+npm install --save atom-ui
+```
+
+ou se for usar o Yarn:
+
+```js
+yarn add atom-ui
+```
+
+## O componente `<AtomPlatformProvider> `
+
+Para usar os componentes do ATOM UI, você precisa envolver seu aplicativo com um componente `<AtomPlatformProvider>`.
+
+```js
+import React from "react";
+import { render } from "react-dom";
+import { AtomPlatformProvider } from "atom-ui";
+
+render(
+  <AtomPlatformProvider>
+    <App />
+  </AtomPlatformProvider>,
+  document.getElementById("root")
+);
+```
+### `<AtomPlatformProvider>` faz algumas coisas:
+* Definições de @font-family para fontes "Source Sans Pro" são estabelecidas
+* O tema é fornecido para descendentes de componentes com estilo de `<AtomPlatformProvider>`, independentemente da profundidade.
+
+## Configurando o Babel
+Enviamos dois tipos de formatos de módulo: CommonJS e ESModules. A maioria das ferramentas de construção modernas usará o último resolvido a partir da entrada do módulo package.json. Para manter o código do módulo o mais limpo possível, tentamos usar a versão mais recente possível do ECMAScript como destino para a nossa transpilação. Portanto, se você tiver que oferecer suporte a navegadores que não oferecem suporte a determinados recursos ECMAScript modernos, poderá configurar suas ferramentas de compilação de acordo. Aqui está um exemplo para babel:
+
+```js
+//config-overrides.js
+const rewireBabelLoader = require("react-app-rewire-babel-loader");
+const path = require("path");
+const fs = require("fs");
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+
+module.exports = {
+  webpack: function (config, env) {
+    ...    
+    config = rewireBabelLoader.include(
+      config,
+      resolveApp("node_modules/atom")
+    );
+    ...
+  },
+};
+
+```
+
+```js
+// babel.config.js
+const path = require('path');
+module.exports {
+  include: [
+    ...,
+    path.resolve('node_modules/atom'),
+  ],
+  ...
+}
+```
+
+### Suporte
+Qualquer solicitação enviar e-mail joaooliveira966@gmail.com
+
+DEVELOP BY JOÃO OLIVEIRA

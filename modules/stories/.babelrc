@@ -1,0 +1,41 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "loose": true,
+        "modules": "auto"
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "loose": true
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ],
+    [
+      "@babel/plugin-proposal-optional-chaining",
+      {
+      "loose": true
+      }
+  ]
+  ]
+}

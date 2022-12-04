@@ -1,0 +1,64 @@
+import {
+  Meta,
+  ArgsTable,
+  Description,
+  Story,
+  Props,
+  Preview,
+  Canvas,
+  Source,
+  DocsContainer
+} from "@storybook/addon-docs/blocks";
+
+import { Button, PrevPlatformProvider } from "@prev/ui-kit";
+
+<Meta
+  title="Componentes / Sample / Visão geral"
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <PrevPlatformProvider>{children}</PrevPlatformProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+  component={Button}
+/>
+
+# Button
+
+Para utilizar o componente basta realizar o import como abaixo:
+
+```js
+import { Button } from "atom-ui";
+```
+
+## Exemplos
+
+Abaixo está uma visão geral dos componentes do botão Primário, Secundário e de Texto.
+
+### Botão Primário
+
+O botão primario é usado para a ação mais importante em uma página ou visualização.
+
+<Canvas>
+  <Button aria-label="Ação do botão">Botão default</Button>
+</Canvas>
+
+### Botão Secundário
+
+O botão secundario é usado para a segunda ação mais importante em uma página ou visualização. Para setar o botão como secundário deve ser passada a propriedade `color="secondary"`
+
+<Canvas>
+  <Button color="secondary" aria-label="Ação do botão">Botão default</Button>
+</Canvas>
+
+
+### Variação do componente
+
+O botão pode ser utilizado como link para isto deve ser passado a propriedade `variant="link"`
+
+<Canvas>
+  <Button variant="link" aria-label="um link">Link default</Button>
+</Canvas>

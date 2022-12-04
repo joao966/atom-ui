@@ -1,0 +1,111 @@
+.atom-ui {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.atom-ui.font-size-xl-4-emphasys {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 64px;
+}
+
+.atom-ui.font-size-xl-4 {
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 64px;
+}
+
+.atom-ui.font-size-xl-3-emphasys {
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 56px;
+}
+
+.atom-ui.font-size-xl-3 {
+  font-weight: normal;
+  font-size: 52px;
+  line-height: 56px;
+}
+
+.atom-ui.font-size-xl-2-emphasys {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 44px;
+}
+
+.atom-ui.font-size-xl-2 {
+  font-weight: normal;
+  font-size: 38px;
+  line-height: 44px;
+}
+
+.atom-ui.font-size-xl-emphasys {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.atom-ui.font-size-xl {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.atom-ui.font-size-lg-emphasys {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.atom-ui.font-size-lg {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.atom-ui.font-size-base-emphasys {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.atom-ui.font-size-base {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.atom-ui.font-size-sm-emphasys {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.atom-ui.font-size-sm {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.atom-ui.font-size-xs-emphasys {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.atom-ui.font-size-xs {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.atom-ui.font-size-xs-2-emphasys {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.atom-ui.font-size-xs-2 {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
